@@ -1,4 +1,4 @@
-package com.smartinvest.auth.dto;
+package com.smartinvest.auth.dto.register;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

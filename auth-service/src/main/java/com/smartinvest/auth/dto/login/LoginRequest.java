@@ -1,15 +1,11 @@
-package com.smartinvest.auth.dto;
+package com.smartinvest.auth.dto.login;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class RegisterRequest {
-
-    @NotBlank
-    private String name;
-
+public class LoginRequest {
     @Email
     @NotBlank
     private String email;

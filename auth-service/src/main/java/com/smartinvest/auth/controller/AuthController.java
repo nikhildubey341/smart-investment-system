@@ -1,11 +1,11 @@
 package com.smartinvest.auth.controller;
 
-import com.smartinvest.auth.dto.RegisterRequest;
-import com.smartinvest.auth.dto.RegisterResponse;
-import com.smartinvest.auth.entity.User;
+import com.smartinvest.auth.dto.login.LoginRequest;
+import com.smartinvest.auth.dto.login.LoginResponse;
+import com.smartinvest.auth.dto.register.RegisterRequest;
+import com.smartinvest.auth.dto.register.RegisterResponse;
 import com.smartinvest.auth.service.UserService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,7 +19,12 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-   public RegisterResponse response(@Valid @RequestBody RegisterRequest request){
+   public RegisterResponse register(@Valid @RequestBody RegisterRequest request){
         return userService.register(request);
+    }
+
+    @PostMapping("/login")
+    public LoginResponse login(@Valid @RequestBody LoginRequest request){
+        return userService.login(request);
     }
 }
